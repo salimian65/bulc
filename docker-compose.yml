@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: clubTest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: 'user'
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: clubTest
+    volumes:
+      - clubTest-postgres:/var/lib/postgresql/data
+volumes:
+  clubTest-postgres:
